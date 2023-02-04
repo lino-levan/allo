@@ -1,5 +1,9 @@
+import Avatar from "../islands/Avatar.tsx";
+import { User } from "../lib/cookie.ts";
+
 export function Header(props: {
   showLogin?: boolean
+  user?: User
 }) {
   return (
     <div class="p-4 bg-gray-100 flex justify-center">
@@ -12,6 +16,11 @@ export function Header(props: {
                 <a href="/login">Login</a>
                 <a class="border border-gray-400 rounded px-4 py-2" href="/signup">Get Started</a>
               </>
+            )
+          }
+          {
+            props.user && (
+              <Avatar user={props.user} />
             )
           }
         </div>
