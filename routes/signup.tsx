@@ -33,7 +33,8 @@ export default function Signup() {
               or
               <div class="border h-0 w-32" />
             </div>
-            <a class="px-4 py-2 bg-gray-100 rounded"><span class="ml-auto">Continue with Google</span></a>
+            <a class="px-4 py-2 bg-gray-100 rounded flex gap-4 justify-center"><img src="/icons/google.svg"/><span>Continue with Google</span></a>
+            <a class="px-4 py-2 bg-gray-100 rounded flex gap-4 justify-center"><img src="/icons/microsoft.svg"/><span>Continue with Microsoft</span></a>
           </div>
         </div>
       </div>
