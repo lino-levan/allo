@@ -1,8 +1,8 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
-import { Footer } from "../../components/Footer.tsx";
-import { Header } from "../../components/Header.tsx";
-import { AppState } from "./_middleware.tsx";
+import { Footer } from "components/Footer.tsx";
+import { Header } from "components/Header.tsx";
+import { AppState } from "lib/types.ts";
 
 export const handler: Handlers<AppState, AppState> = {
   GET(_, ctx) {

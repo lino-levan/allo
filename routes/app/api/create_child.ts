@@ -1,6 +1,6 @@
 import { Handlers } from "$fresh/server.ts";
-import { cookie } from "../../../lib/cookie.ts";
-import { AppState } from "../_middleware.tsx";
+import { cookie } from "lib/cookie.ts";
+import { AppState } from "lib/types.ts";
 
 export const handler: Handlers<unknown, AppState> = {
   async POST(req, ctx) {

@@ -1,9 +1,9 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
-import { Footer } from "../../../components/Footer.tsx";
-import { Header } from "../../../components/Header.tsx";
-import { AppState } from "./../_middleware.tsx";
-import { Child, cookie, Transaction, User } from "../../../lib/cookie.ts";
+import { Footer } from "components/Footer.tsx";
+import { Header } from "components/Header.tsx";
+import { AppState, Child, Transaction, User } from "lib/types.ts";
+import { cookie } from "lib/cookie.ts";
 
 interface ChildPageProps {
   user: User;
@@ -20,7 +20,7 @@ export const handler: Handlers<ChildPageProps, AppState> = {
 
     const transactions = await cookie.select<Transaction>(
       "transactions",
-      "eq($child, )",
+      `eq($child, '${child.key}')`,
     );
 
     return ctx.render({
@@ -55,8 +55,19 @@ export default function AppPage(props: PageProps<ChildPageProps>) {
         <Header user={props.data.user} />
         <div class="p-4 mx-auto max-w-screen-md flex flex-col gap-4">
           <div class="flex items-center gap-4">
-            <h1 class="text-4xl">{props.data.child.name}'s Account</h1>
-            <a class="ml-auto border rounded px-4 py-2">Add Money</a>
+            <div class="flex gap-4">
+              <img
+                class="h-10 w-10 rounded-full"
+                src={props.data.child.avatar}
+              />
+              <h1 class="text-4xl">{props.data.child.name}'s Account</h1>
+            </div>
+            <a
+              href={`/app/child/${props.data.child.key}/add`}
+              class="ml-auto border rounded px-4 py-2 hover:bg-gray-50"
+            >
+              Add Money
+            </a>
             <a class="border rounded px-4 py-2 hover:bg-red-500 hover:text-white transition-all cursor-pointer">
               Restrict Account
             </a>

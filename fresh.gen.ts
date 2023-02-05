@@ -6,32 +6,40 @@ import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/api/login/[provider].ts";
 import * as $1 from "./routes/api/logout.ts";
 import * as $2 from "./routes/app/_middleware.tsx";
-import * as $3 from "./routes/app/api/create_child.ts";
-import * as $4 from "./routes/app/child/[child_key].tsx";
-import * as $5 from "./routes/app/child/new.tsx";
-import * as $6 from "./routes/app/index.tsx";
-import * as $7 from "./routes/index.tsx";
-import * as $8 from "./routes/signup.tsx";
-import * as $$0 from "./islands/Avatar.tsx";
-import * as $$1 from "./islands/CreateChild.tsx";
-import * as $$2 from "./islands/SignIn.tsx";
+import * as $3 from "./routes/app/account/index.tsx";
+import * as $4 from "./routes/app/api/create_child.ts";
+import * as $5 from "./routes/app/api/set_balance.ts";
+import * as $6 from "./routes/app/child/[child_key]/add.tsx";
+import * as $7 from "./routes/app/child/[child_key]/index.tsx";
+import * as $8 from "./routes/app/child/new.tsx";
+import * as $9 from "./routes/app/index.tsx";
+import * as $10 from "./routes/index.tsx";
+import * as $11 from "./routes/signup.tsx";
+import * as $$0 from "./islands/AddMoney.tsx";
+import * as $$1 from "./islands/Avatar.tsx";
+import * as $$2 from "./islands/CreateChild.tsx";
+import * as $$3 from "./islands/SignIn.tsx";
 
 const manifest = {
   routes: {
     "./routes/api/login/[provider].ts": $0,
     "./routes/api/logout.ts": $1,
     "./routes/app/_middleware.tsx": $2,
-    "./routes/app/api/create_child.ts": $3,
-    "./routes/app/child/[child_key].tsx": $4,
-    "./routes/app/child/new.tsx": $5,
-    "./routes/app/index.tsx": $6,
-    "./routes/index.tsx": $7,
-    "./routes/signup.tsx": $8,
+    "./routes/app/account/index.tsx": $3,
+    "./routes/app/api/create_child.ts": $4,
+    "./routes/app/api/set_balance.ts": $5,
+    "./routes/app/child/[child_key]/add.tsx": $6,
+    "./routes/app/child/[child_key]/index.tsx": $7,
+    "./routes/app/child/new.tsx": $8,
+    "./routes/app/index.tsx": $9,
+    "./routes/index.tsx": $10,
+    "./routes/signup.tsx": $11,
   },
   islands: {
-    "./islands/Avatar.tsx": $$0,
-    "./islands/CreateChild.tsx": $$1,
-    "./islands/SignIn.tsx": $$2,
+    "./islands/AddMoney.tsx": $$0,
+    "./islands/Avatar.tsx": $$1,
+    "./islands/CreateChild.tsx": $$2,
+    "./islands/SignIn.tsx": $$3,
   },
   baseUrl: import.meta.url,
   config,

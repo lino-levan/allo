@@ -1,11 +1,7 @@
 import { MiddlewareHandlerContext } from "$fresh/server.ts";
 import { deleteCookie, getCookies } from "std/http/cookie.ts";
-import { Child, cookie, User } from "../../lib/cookie.ts";
-
-export interface AppState {
-  user: User;
-  children: Child[];
-}
+import { cookie } from "lib/cookie.ts";
+import { AppState, Child, User } from "lib/types.ts";
 
 export async function handler(
   req: Request,

@@ -1,6 +1,7 @@
 import { setCookie } from "std/http/cookie.ts";
 import { Handlers } from "$fresh/server.ts";
-import { cookie, createTables, User } from "../../../lib/cookie.ts";
+import { cookie, createTables } from "lib/cookie.ts";
+import { User } from "lib/types.ts";
 
 export const handler: Handlers = {
   async GET(req, ctx) {

@@ -10,6 +10,10 @@
     "twind/": "https://esm.sh/twind@0.16.17/",
 
     "std/": "https://deno.land/std@0.176.0/",
-    "cookie_driver": "https://deno.land/x/cookie_driver@0.5.1/mod.ts"
+    "cookie_driver": "https://deno.land/x/cookie_driver@0.5.1/mod.ts",
+
+    "components/": "./components/",
+    "islands/": "./islands/",
+    "lib/": "./lib/"
   }
 }
