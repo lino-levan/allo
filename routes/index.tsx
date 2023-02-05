@@ -6,7 +6,7 @@ import { Header } from "../components/Header.tsx";
 
 export const handler: Handlers = {
   GET(req, ctx) {
-    if(getCookies(req.headers)["session"]) {
+    if (getCookies(req.headers)["session"]) {
       return new Response("", {
         headers: {
           location: "/app",
@@ -14,10 +14,10 @@ export const handler: Handlers = {
         status: 307,
       });
     }
-    
+
     return ctx.render();
   },
-}
+};
 
 export default function Home() {
   return (
@@ -36,7 +36,7 @@ export default function Home() {
         />
       </Head>
       <div class="min-h-screen">
-        <Header showLogin={true}/>
+        <Header showLogin={true} />
         <div class="p-4 mx-auto max-w-screen-lg ">
           <div class="grid grid-cols-2 gap-4 items-center h-screen mt-[-48px]">
             <div class="flex flex-col gap-8 items-center">

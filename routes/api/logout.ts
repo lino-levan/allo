@@ -10,8 +10,8 @@ export const handler: Handlers = {
       status: 307,
     });
 
-    deleteCookie(res.headers, "session")
+    deleteCookie(res.headers, "session");
 
-    return res
+    return res;
   },
 };

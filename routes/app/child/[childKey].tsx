@@ -8,7 +8,7 @@ export const handler: Handlers<AppState, AppState> = {
   GET(_, ctx) {
     return ctx.render(ctx.state);
   },
-}
+};
 
 export default function AppPage(props: PageProps<AppState>) {
   return (

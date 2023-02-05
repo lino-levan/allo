@@ -4,27 +4,29 @@ import { cookie, createTables, User } from "../../../lib/cookie.ts";
 
 export const handler: Handlers = {
   async GET(req, ctx) {
-    const email = new URL(req.url).searchParams.get("email")
+    const email = new URL(req.url).searchParams.get("email");
 
-    if(!email || typeof email !== "string") return ctx.renderNotFound()
+    if (!email || typeof email !== "string") return ctx.renderNotFound();
 
-    await createTables()
+    await createTables();
 
-    let key = ""
+    let key = "";
 
     const users = await cookie.select<User>("users", `eq($email, '${email}')`, {
-      maxResults: 1
-    })
+      maxResults: 1,
+    });
 
-    if(users.length > 0) {
+    if (users.length > 0) {
       // Login
-      key = users[0].key
+      key = users[0].key;
     } else {
       // Signup
       key = await cookie.insert("users", {
         email,
-        avatar: `https://api.dicebear.com/5.x/shapes/svg?seed=${encodeURIComponent(email)}`
-      })
+        avatar: `https://api.dicebear.com/5.x/shapes/svg?seed=${
+          encodeURIComponent(email)
+        }`,
+      });
     }
 
     const res = new Response("", {
@@ -44,9 +46,9 @@ export const handler: Handlers = {
       name: "session",
       value: key,
       path: "/",
-      httpOnly: true
-    })
+      httpOnly: true,
+    });
 
-    return res
+    return res;
   },
 };

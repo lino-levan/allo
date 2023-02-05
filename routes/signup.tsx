@@ -20,12 +20,15 @@ export default function Signup() {
         />
       </Head>
       <div class="min-h-screen">
-        <Header/>
+        <Header />
         <div class="p-4 mx-auto max-w-screen-lg">
           <div class="flex flex-col gap-8 items-center">
             <div class="flex flex-col items-center">
               <h1 class="text-3xl font-bold">Welcome</h1>
-              <h1 class="text-center text-gray-600">Sign up to Allo to ensure your  <br /> childrens' financial education</h1>
+              <h1 class="text-center text-gray-600">
+                Sign up to Allo to ensure your <br />{" "}
+                childrens' financial education
+              </h1>
             </div>
             <SignIn />
           </div>

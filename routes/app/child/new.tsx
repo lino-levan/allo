@@ -3,12 +3,13 @@ import { Head } from "$fresh/runtime.ts";
 import { Footer } from "../../../components/Footer.tsx";
 import { Header } from "../../../components/Header.tsx";
 import { AppState } from "./../_middleware.tsx";
+import CreateChild from "../../../islands/CreateChild.tsx";
 
 export const handler: Handlers<AppState, AppState> = {
   GET(_, ctx) {
     return ctx.render(ctx.state);
   },
-}
+};
 
 export default function AppPage(props: PageProps<AppState>) {
   return (
@@ -28,8 +29,8 @@ export default function AppPage(props: PageProps<AppState>) {
       </Head>
       <div class="min-h-screen">
         <Header user={props.data.user} />
-        <div class="p-4 mx-auto max-w-screen-md grid grid-cols-2">
-          hello
+        <div class="p-4 mx-auto max-w-screen-md flex justify-center">
+          <CreateChild />
         </div>
       </div>
       <Footer />

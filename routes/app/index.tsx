@@ -8,7 +8,7 @@ export const handler: Handlers<AppState, AppState> = {
   GET(_, ctx) {
     return ctx.render(ctx.state);
   },
-}
+};
 
 export default function AppPage(props: PageProps<AppState>) {
   return (
@@ -29,14 +29,14 @@ export default function AppPage(props: PageProps<AppState>) {
       <div class="min-h-screen">
         <Header user={props.data.user} />
         <div class="p-4 mx-auto max-w-screen-md grid grid-cols-2">
-          {
-            props.data.children.map(()=>(
-              <a>
-
-              </a>
-            ))
-          }
-          <a href="/app/child/new" class="p-4 border rounded shadow flex justify-center items-center text-4xl h-60 hover:scale-105 transition-[scale]">
+          {props.data.children.map(() => (
+            <a>
+            </a>
+          ))}
+          <a
+            href="/app/child/new"
+            class="p-4 border rounded shadow flex justify-center items-center text-4xl h-60 hover:scale-105 transition-[scale]"
+          >
             +
           </a>
         </div>
