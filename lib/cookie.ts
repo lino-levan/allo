@@ -10,6 +10,7 @@ export async function createTables() {
     try {
       await cookie.dropTable("users");
       await cookie.dropTable("children");
+      await cookie.dropTable("transactions");
     } catch {
       // no op
     }
@@ -25,7 +26,15 @@ export async function createTables() {
     name: "string",
     email: "string",
     avatar: "string",
-    last_deposit: "number",
+    last_deposit: "nullable number",
+    balance: "number",
+  });
+
+  await cookie.createTable("transactions", {
+    child: "foreign_key",
+    amount: "number",
+    for: "string",
+    date_created: "number",
   });
 }
 
@@ -41,5 +50,14 @@ export interface Child {
   name: string;
   email: string;
   avatar: string;
-  last_deposit: number;
+  last_deposit?: number;
+  balance: number;
+}
+
+export interface Transaction {
+  key: string;
+  child: string;
+  amount: number;
+  for: string;
+  date_created: number;
 }

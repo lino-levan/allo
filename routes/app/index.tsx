@@ -39,9 +39,14 @@ export default function AppPage(props: PageProps<AppState>) {
                 <p class="text-2xl">{child.name}</p>
               </div>
               <div class="w-full">
-                <p class="leading-none">$40</p>
+                <p class="leading-none">
+                  {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                  }).format(child.balance)}
+                </p>
                 <p class="text-sm text-gray-500">
-                  Last Deposit: {child.last_deposit > 0
+                  Last Deposit: {child.last_deposit
                     ? new Date(child.last_deposit).toLocaleDateString()
                     : "Never"}
                 </p>

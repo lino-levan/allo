@@ -7,7 +7,7 @@ import * as $0 from "./routes/api/login/[provider].ts";
 import * as $1 from "./routes/api/logout.ts";
 import * as $2 from "./routes/app/_middleware.tsx";
 import * as $3 from "./routes/app/api/create_child.ts";
-import * as $4 from "./routes/app/child/[childKey].tsx";
+import * as $4 from "./routes/app/child/[child_key].tsx";
 import * as $5 from "./routes/app/child/new.tsx";
 import * as $6 from "./routes/app/index.tsx";
 import * as $7 from "./routes/index.tsx";
@@ -22,7 +22,7 @@ const manifest = {
     "./routes/api/logout.ts": $1,
     "./routes/app/_middleware.tsx": $2,
     "./routes/app/api/create_child.ts": $3,
-    "./routes/app/child/[childKey].tsx": $4,
+    "./routes/app/child/[child_key].tsx": $4,
     "./routes/app/child/new.tsx": $5,
     "./routes/app/index.tsx": $6,
     "./routes/index.tsx": $7,

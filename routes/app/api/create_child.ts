@@ -8,6 +8,8 @@ export const handler: Handlers<unknown, AppState> = {
 
     const child = await cookie.insert("children", {
       user: ctx.state.user.key,
+      balance: 0,
+      last_deposit: null,
       avatar: `https://api.dicebear.com/5.x/shapes/svg?seed=${
         encodeURIComponent(email)
       }`,
