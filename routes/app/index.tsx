@@ -25,10 +25,12 @@ export default function AppPage(props: PageProps<AppState>) {
           href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
           rel="stylesheet"
         />
+        <link rel="shortcut icon" type="image/png" href="logo.png" />
+        <link rel="apple-touch-icon" href="logo.png" />
       </Head>
       <div class="min-h-screen">
         <Header user={props.data.user} />
-        <div class="p-4 mx-auto max-w-screen-md grid grid-cols-2 gap-4">
+        <div class="p-4 mx-auto max-w-screen-md grid grid-cols-1 md:grid-cols-2 gap-4">
           {props.data.children.map((child) => (
             <a
               href={"/app/child/" + child.key}
