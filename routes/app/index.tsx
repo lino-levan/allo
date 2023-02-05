@@ -27,6 +27,7 @@ export default function AppPage(props: PageProps<AppState>) {
         />
         <link rel="shortcut icon" type="image/png" href="logo.png" />
         <link rel="apple-touch-icon" href="logo.png" />
+        <link rel="manifest" href="/manifest.json" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="Allo" />
       </Head>

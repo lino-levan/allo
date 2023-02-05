@@ -1,0 +1,8 @@
+{
+  "short_name": "Allo",
+  "name": "Allo: Financial education for kids",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/app",
+  "description": "Financial education for kids"
+}
