@@ -28,9 +28,24 @@ export default function AppPage(props: PageProps<AppState>) {
       </Head>
       <div class="min-h-screen">
         <Header user={props.data.user} />
-        <div class="p-4 mx-auto max-w-screen-md grid grid-cols-2">
-          {props.data.children.map(() => (
-            <a>
+        <div class="p-4 mx-auto max-w-screen-md grid grid-cols-2 gap-4">
+          {props.data.children.map((child) => (
+            <a
+              href={"/app/child/" + child.key}
+              class="p-4 border rounded shadow flex flex-col items-center h-60 hover:scale-105 transition-[scale]"
+            >
+              <div class="border-b w-full h-full flex flex-col justify-center items-center pb-4 mb-4">
+                <img class="h-16 w-16 rounded-full" src={child.avatar} />
+                <p class="text-2xl">{child.name}</p>
+              </div>
+              <div class="w-full">
+                <p class="leading-none">$40</p>
+                <p class="text-sm text-gray-500">
+                  Last Deposit: {child.last_deposit > 0
+                    ? new Date(child.last_deposit).toLocaleDateString()
+                    : "Never"}
+                </p>
+              </div>
             </a>
           ))}
           <a

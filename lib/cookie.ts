@@ -25,6 +25,7 @@ export async function createTables() {
     name: "string",
     email: "string",
     avatar: "string",
+    last_deposit: "number",
   });
 }
 
@@ -40,4 +41,5 @@ export interface Child {
   name: string;
   email: string;
   avatar: string;
+  last_deposit: number;
 }
