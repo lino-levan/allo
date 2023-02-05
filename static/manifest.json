@@ -1,7 +1,7 @@
 {
   "short_name": "Allo",
   "name": "Allo: Financial education for kids",
-  "display": "standalone",
+  "display": "fullscreen",
   "orientation": "portrait",
   "scope": "/app",
   "description": "Financial education for kids"
